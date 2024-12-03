@@ -24,7 +24,7 @@ Demonstrate the differences between using the hosts file and DNS for URL resolut
 
 1. Open the `/etc/hosts` file for editing:
    ```bash
-   sudo nano /etc/hosts
+   sudo vim /etc/hosts
    ```
 
 2. Add an entry to map the IP address to the hostname:
