@@ -1,4 +1,4 @@
-### Disk Management and Logical Volume Setup (CentOS)
+### Lab1: User and Group Management
 
 This guide walks through creating a new group, user, and configuring permissions for installing Nginx with `sudo` without a password.
 

@@ -1,4 +1,4 @@
-### Disk Management and Logical Volume Setup
+### Lab5: Disk Management and Logical Volume Setup
 
 This guide walks through the process of attaching a 15GB disk to a VM, partitioning it, and configuring various storage functionalities including filesystems, swap, and Logical Volume Management (LVM).
 
