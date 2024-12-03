@@ -77,7 +77,7 @@ chmod +x script.sh
 Run the script manually to verify:
 
 ```bash
-./check_disk_usage.sh
+./script.sh
 ```
 
 ---
