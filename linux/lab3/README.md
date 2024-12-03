@@ -1,4 +1,4 @@
-"### Lab 3: Shell Scripting Basics 2
+### Lab 3: Shell Scripting Basics 2
 
 #### Objective
 Create a shell script to ping every server in the `172.16.17.x` subnet (where `x` is a number between 0 and 255). The script should:
