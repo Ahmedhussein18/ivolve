@@ -1,0 +1,22 @@
+---
+- name: Install and configure Apache
+  hosts: webservers
+  become: yes
+
+  tasks:
+    - name: Install nginx
+      apt:
+        name: nginx
+        state: latest
+   
+    - name: Edit html file
+      copy: 
+        dest: /var/www/html/index.html
+        content: Hello World
+  
+    - name: Ensure nginx is running
+      service:
+        name: nginx
+        state: started
+        enabled: true
+

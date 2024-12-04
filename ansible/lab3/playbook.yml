@@ -1,0 +1,44 @@
+---
+- name: Install mysql
+  hosts: webservers
+  become: yes
+  vars_files:
+    - mysql_vars
+  
+  tasks:
+    - name: Install mysql
+      apt:
+        name: mysql-server
+        state: latest
+        update_cache: yes
+   
+    - name: Start mysql
+      service:
+        name: mysql
+        state: started
+        enabled: true
+
+    - name: Install python-mysql
+      apt:
+        name: python3-pymysql
+        state: latest 
+
+    - name: Set root user to use mysql_native_password
+      ansible.builtin.shell: 
+       mysql -u root -p'{{ mysql_root_password }}' -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '{{mysql_root_password}}';"     
+
+    - name: Create ivolve database
+      ansible.builtin.mysql_db:
+        name: ivolve
+        state: present
+        login_user: root
+        login_password: "{{ mysql_root_password }}"
+
+    - name: Create ivolveuser with full privileges on ivolve database
+      ansible.builtin.mysql_user:
+        name: ivolveuser
+        password: "{{ mysql_db_password }}"
+        priv: 'ivolve.*:ALL'
+        state: present
+        login_user: root
+        login_password: "{{ mysql_root_password }}"
