@@ -8,9 +8,9 @@ Use the AWS CLI to create an S3 bucket, configure permissions, upload/download f
 ### Prerequisites
 
 1. AWS CLI installed and configured:
-   \`\`\`bash
+   ```bash
    aws configure
-   \`\`\`
+   ```
 
 2. IAM user with the necessary permissions:
    - `s3:CreateBucket`
@@ -24,9 +24,10 @@ Use the AWS CLI to create an S3 bucket, configure permissions, upload/download f
 
 ### Steps
 
-#### 1. Create an S3 Bucket
+#### 1. Create an S3 Bucket and set block public acls to false
 ```bash
 aws s3api create-bucket --bucket ivolve-marzouk-bucket --region us-east-1
+aws s3api put-public-access-block --bucket ivolve-marzouk-bucket --public-access-block-configuration BlockPublicAcls=false
 ```
 
 ---
