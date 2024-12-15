@@ -1,0 +1,9 @@
+gmail_address = "ahmed.marzoukk00@gmail.com"
+vpc_cidr_block = "10.0.0.0/16"
+subnet_cidr_block = "10.0.0.0/24"
+ami_id = "ami-005fc0f236362e99f"
+instance_type = "t2.micro"
+key_name = "marzouk-key"
+name = "ivolve"
+metric_name = "CPUUtilization"
+threshold = 70
