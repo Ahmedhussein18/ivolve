@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-config
+  namespace: ivolve
+data:
+  MYSQL_DATABASE: ivolve_db
+  MYSQL_USER: ivolve_user
+
